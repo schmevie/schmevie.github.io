@@ -1,0 +1,74 @@
+        body {
+        }
+        .featherlight.filter {
+            background: rgba(255, 255, 255, 0.8);
+            opacity: 1;
+        }
+        #mylightbox {
+            background: rgba(0,0,0,0);            
+            width: 100%;
+            height: 100%;
+            overflow:hidden;
+        }
+        .featherlight .featherlight-content {
+            margin-top: 3%;
+            max-height: none;
+            max-width: none;
+            width: 60%;
+            height: 65%;
+            vertical-align: top;
+            opacity: 1;
+            padding-top: 0px;
+            padding-right: 0px;
+            padding-left: 0px;
+        }
+        .lightbox {
+            display: none;
+        }
+        .block {
+            background: black;
+            width:24%;
+            height: 11.5vw;
+            border:1px solid white;
+            float: left;
+        }
+        .chosen {
+            background: grey;
+
+        }
+        .hamburger {
+            background: rgb(207, 207, 206);
+            height: 100%;
+            width: 60%;
+            position: fixed;            
+            top:0;
+            right:-60%;
+
+        }
+        .hamburger-item {
+            width:100%;
+            background: grey;
+            position: absolute;
+
+        }
+        #about {
+            top: 83px;
+        }
+        #work {
+            top: 191px;
+        }
+        #contact {
+            top: 300px;
+        }
+        .ham-line {
+            width: 36px;
+            height: 6px;
+            background: black;
+            border-radius: 21px;
+            margin-bottom: 2px;
+        }
+        .hamburger-menu {
+            position: absolute;
+            top:19px;
+            right: 20px;
+        }
