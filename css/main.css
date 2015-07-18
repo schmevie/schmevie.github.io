@@ -1,74 +1,130 @@
-        body {
-        }
-        .featherlight.filter {
-            background: rgba(255, 255, 255, 0.8);
-            opacity: 1;
-        }
-        #mylightbox {
-            background: rgba(0,0,0,0);            
-            width: 100%;
-            height: 100%;
-            overflow:hidden;
-        }
-        .featherlight .featherlight-content {
-            margin-top: 3%;
-            max-height: none;
-            max-width: none;
-            width: 60%;
-            height: 65%;
-            vertical-align: top;
-            opacity: 1;
-            padding-top: 0px;
-            padding-right: 0px;
-            padding-left: 0px;
-        }
-        .lightbox {
-            display: none;
-        }
-        .block {
-            background: black;
-            width:24%;
-            height: 11.5vw;
-            border:1px solid white;
-            float: left;
-        }
-        .chosen {
-            background: grey;
+html {
+    background: url(../img/textures/pink_rice.png);
+}
+@font-face {
+    font-family: GreatVibes;
+    src: url(../fonts/GreatVibes-Regular.ttf) format("truetype");
+}
+@font-face {
+    font-family: AGentleTouch;
+    src: url(../fonts/A-Gentle-Touch.ttf) format("truetype");
+}
+body {
 
-        }
-        .hamburger {
-            background: rgb(207, 207, 206);
-            height: 100%;
-            width: 60%;
-            position: fixed;            
-            top:0;
-            right:-60%;
+}
+#wrapper {
+    text-align:center;
+}
+h1 {
+    color: #7B3327;
+    font-family: AGentleTouch;
+    text-align: center;
+    font-size: 4.5em;
+    display: inline-block;
+}
 
-        }
-        .hamburger-item {
-            width:100%;
-            background: grey;
-            position: absolute;
+#heart-icon {
+    display: inline-block;
+    font-size: 0.5em;
+    -webkit-transform: rotate(7deg) translate3d(0, -5px, 0);
+}
 
-        }
-        #about {
-            top: 83px;
-        }
-        #work {
-            top: 191px;
-        }
-        #contact {
-            top: 300px;
-        }
-        .ham-line {
-            width: 36px;
-            height: 6px;
-            background: black;
-            border-radius: 21px;
-            margin-bottom: 2px;
-        }
-        .hamburger-menu {
-            position: absolute;
-            top:19px;
-            right: 20px;
-        }
+.headshot-container {
+  display: inline-block;
+  width: 33%;
+  height: auto;
+  margin: 0 auto;
+  margin-bottom: 5%;
+}
+
+.main-headshot {
+  border-radius: 50%;
+  width: 100%;
+  padding-bottom: 100%;
+  background: url(../img/headshots/headshot_quirky.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.column-container {
+  height: auto;
+}
+.column-left {
+  float: left;
+  width: 33%;
+}
+
+.column-right {
+  float: right;
+  width: 33%;
+}
+
+.column-left .headshot-frame {
+  width: 70%;
+  height: 255px;
+  background: url(../img/images/blue-frame.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  margin:0 auto;
+}
+.column-left .reel-frame {
+  width: 70%;
+  height: 255px;
+  background: url(../img/images/dark-green-frame.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  margin:0 auto;
+}
+
+.column-right .about-frame {
+  width: 70%;
+  height: 255px;
+  background: url(../img/images/green-frame.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  margin:0 auto;
+}
+.column-right .resume-frame {
+  width: 70%;
+  height: 255px;
+  background: url(../img/images/orange-frame.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  margin:0 auto;
+}
+
+.link-text {
+  position: absolute;
+  top: 38%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 1px;
+  color: #7B3327;
+  font-family: AGentleTouch;
+  font-size: 3em;
+}
+
+.link-text.headshot {
+  width: 165px;
+}
+
+.link-text.reel {
+  width: 65px;
+  left: -20px;
+}
+
+
+
+
+
+
