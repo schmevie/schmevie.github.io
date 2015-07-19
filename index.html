@@ -10,32 +10,39 @@
         <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.0.min.js"></script>
         <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.16.0/TweenMax.min.js"></script>
         <script src="js/main.js"></script>
+        <script src="js/lib/jquery.address-1.5.min.js"></script>
+        <script src="js/lib/jquery-bbq.min.js"></script>
+        <script src="js/lib/sugar.min.js"></script>
 
         <!-- Styles -->
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
         <link href="css/main.css" type="text/css" rel="stylesheet" title="Main Styles" />
         <div id="wrapper">
-            <h1>Cristina Spruell <i id="heart-icon" class="fa fa-heart fa-3"></i></h1>
+            <h1>Cristina Spruell <div id="heart-icon"></div><!-- <i id="heart-icon" class="fa fa-heart fa-3"></i> --></h1>
         </div> <!-- #/wrapper -->
     </head>
 <!-- This is the "header" -->
 
 <body>
     <div class="column-container">
-        <div class="headshot-container">
-          <div class="main-headshot"></div>
-        </div>
         <div class="column-left">
-            <a href="#"><div class="headshot-frame">
-                <div class="link-text headshot">Headshots</div>
-            </div></a>
-            <a href="#"><div class="reel-frame">
-                <div class="link-text reel">Reel</div>
-            </div></a>
+            <div class="headshot-frame">
+                <a href="/headshots"><div class="link-text headshot">Headshots</div></a>
+            </div>
+            <div class="reel-frame">
+                <a href="/reel"><div class="link-text reel">Reel</div></a>
+            </div>
         </div>
         <div class="column-right">
-            <a href=""><div class="about-frame"></div></a>
-            <a href=""><div class="resume-frame"></div></a>
+            <div class="about-frame">
+                <a href="/resume"><div class="link-text resume">Resume</div></a>
+            </div>
+            <div class="resume-frame">
+                <a href="/about"><div class="link-text about">About</div></a>
+            </div>
+        </div>
+        <div class="headshot-container">
+          <div class="main-headshot"></div>
         </div>
     </div>
 </body>
