@@ -50,6 +50,38 @@ function preload ()
 	this.load.image('hat', 'https://i.imgur.com/6IFTYeA.png');
 	this.load.image('sparkle', 'https://i.imgur.com/y4Gk0H1.png');
 	this.load.image('cake', 'https://i.imgur.com/0nHWhR9.png');
+	this.load.image('couple1', 'https://i.imgur.com/jkgEDYn.jpeg');
+	this.load.image('couple2', 'https://i.imgur.com/dr3esuE.jpeg');
+	this.load.image('quote1', 'https://i.imgur.com/5xYvUv1.png');
+	this.load.image('quote2', 'https://i.imgur.com/Ofx6Esd.png');
+	this.load.image('quote3', 'https://i.imgur.com/zHaWaxf.png');
+	this.load.image('quote4', 'https://i.imgur.com/juHi1Bq.png');
+	this.load.image('quote5', 'https://i.imgur.com/ViW2SGk.png');
+	this.load.image('quote6', 'https://i.imgur.com/6V6vfxD.png');
+	this.load.image('quote7', 'https://i.imgur.com/rSWDy4L.png');
+	this.load.image('quote8', 'https://i.imgur.com/DXlwOm5.png');
+	this.load.image('quote9', 'https://i.imgur.com/xtTLKxW.png');
+	this.load.image('quote10', 'https://i.imgur.com/hmAbjFW.png');
+	this.load.image('quote11', 'https://i.imgur.com/Abvpl6j.png');
+	this.load.image('quote12', 'https://i.imgur.com/BYnSyBN.png');
+	this.load.image('quote13', 'https://i.imgur.com/Gxmd3TH.png');
+	this.load.image('quote14', 'https://i.imgur.com/POxJBZm.png');
+	this.load.image('quote15', 'https://i.imgur.com/VDXY7GU.png');
+	this.load.image('quote16', 'https://i.imgur.com/QxkR2wC.png');
+	this.load.image('quote17', 'https://i.imgur.com/ROpuu2s.png');
+	this.load.image('quote18', 'https://i.imgur.com/ZQof0b9.png');
+	this.load.image('quote19', 'https://i.imgur.com/BO6BwWT.png');
+	this.load.image('quote20', 'https://i.imgur.com/CKJdWpd.png');
+	this.load.image('quote21', 'https://i.imgur.com/U2Rdi4U.png');
+	this.load.image('quote22', 'https://i.imgur.com/veKlC0n.png');
+	this.load.image('quote23', 'https://i.imgur.com/xdNm4cE.png');
+	this.load.image('quote24', 'https://i.imgur.com/5MmmEyF.png');
+	this.load.image('quote25', 'https://i.imgur.com/u1qUHta.png');
+	this.load.image('quote26', 'https://i.imgur.com/yfzprBi.png');
+	// Load quote images
+	// for (let i = 1; i <= 26; i++) {
+	// 	this.load.image(`quote${i}`, `https://i.imgur.com/quote${i}.png`);
+	// }
 }
 
 //////// This is your create function 
@@ -87,6 +119,15 @@ function startGame(scene) {
 			.setScale(0.3)
 			.setOrigin(0, 0.5); // Set origin to left center for proper alignment
 	}
+	
+	// Add couple images at the end of the world
+	const couple1 = scene.add.image(WORLD_WIDTH - 500, 300, 'couple1')
+		.setScale(0.05)
+		.setOrigin(0.5, 0.5);
+	
+	const couple2 = scene.add.image(WORLD_WIDTH - 100, 300, 'couple2')
+		.setScale(0.05)
+		.setOrigin(0.5, 0.5);
 	
 	// Create and animate the "Find the balloons!" text
 	const findText = scene.add.text(300, 100, 'Find the balloons! \nLeft and right arrow keys to move and space to jump', {
@@ -279,13 +320,8 @@ function startGame(scene) {
 	const balloonTypes = ['balloon1', 'balloon2', 'balloon3'];
 	const balloonSpacing = (WORLD_WIDTH - 700) / 26; // Space balloons evenly across remaining width
 	
-	// Array of unique pop messages
-	const popMessages = [
-		'POP!', 'BANG!', 'BOOM!', 'KAPOW!', 'WHAM!', 'POW!', 'BAM!',
-		'KABOOM!', 'ZAP!', 'ZING!', 'WHACK!', 'SMACK!', 'CRASH!',
-		'BOING!', 'SPLAT!', 'THUD!', 'CLANG!', 'CLASH!', 'CLUNK!',
-		'CRACK!', 'DING!', 'DONG!', 'PING!', 'PONG!', 'RING!', 'TINK!'
-	];
+	// Array of quote image keys
+	const quoteKeys = Array.from({length: 26}, (_, i) => `quote${i + 1}`);
 	
 	for (let i = 0; i < 26; i++) {
 		const x = 700 + (i * balloonSpacing); // Start at x=700
@@ -300,7 +336,7 @@ function startGame(scene) {
 		balloon.setGravityY(-150); // Increased upward gravity
 		balloon.body.setSize(156, 336); // Use original sprite size
 		balloon.body.setOffset(0, 0); // Reset offset
-		balloon.popMessage = popMessages[i]; // Assign unique message to each balloon
+		balloon.quoteKey = quoteKeys[i]; // Assign quote image key to each balloon
 		balloons.push(balloon);
 	}
 	
@@ -351,31 +387,27 @@ function startGame(scene) {
 				explosion.destroy();
 			});
 			
-			// Create floating text
-			const popText = scene.add.text(balloon.x, -50, balloon.popMessage, {
-				fontSize: '48px',
-				fontFamily: '"Press Start 2P", monospace',
-				fill: '#EE7A3B',
-				stroke: '#000000',
-				strokeThickness: 4
-			}).setOrigin(0.5);
+			// Create quote image
+			const quote = scene.add.image(balloon.x, -50, balloon.quoteKey)
+				.setScale(0.5)
+				.setOrigin(0.5);
 			
 			// First tween: slide down
 			scene.tweens.add({
-				targets: popText,
+				targets: quote,
 				y: 100,
 				duration: 500,
 				ease: 'Power2',
 				onComplete: () => {
 					// Second tween: wait 2 seconds then fade out
 					scene.tweens.add({
-						targets: popText,
+						targets: quote,
 						alpha: 0,
 						duration: 500,
 						delay: 2000,
 						ease: 'Power2',
 						onComplete: () => {
-							popText.destroy();
+							quote.destroy();
 						}
 					});
 				}
