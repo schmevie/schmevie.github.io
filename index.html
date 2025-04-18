@@ -1,28 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Arjay Singh</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-    }
+	<meta charset="utf-8">
+	<title>My Game</title>
+	<link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/phaser@3.55.2/dist/phaser.min.js"></script>
+	<style>
+		body {
+			margin: 0;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			min-height: 100vh;
+			background-color: #f0f0f0;
+		}
 
-    .image-container {
-      width: 100%;
-      overflow-y: scroll;
-    }
-
-    .image-container img {
-      display: block;
-      width: 100%;
-      height: auto;
-    }
-  </style>
+		#game-container {
+			border: 2px solid #333;
+			box-shadow: 0 0 10px rgba(0,0,0,0.3);
+		}
+	</style>
 </head>
 <body>
-  <div class="image-container">
-    <img src="./img/screencapture-imdb-name-nm7615404-2023-05-19-15_21_51.png" alt="Your Long Image">
-  </div>
+	<div id="game-container"></div>
+	<script src="js/main.js"></script>
 </body>
 </html>
+
