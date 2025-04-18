@@ -43,7 +43,7 @@ function preload ()
 	this.load.spritesheet('balloon2', 'https://i.imgur.com/bLwQlT7.png', { frameWidth: 156, frameHeight: 336 });
 	this.load.spritesheet('balloon3', 'https://i.imgur.com/dF9rGEG.png', { frameWidth: 156, frameHeight: 336 });
 	this.load.spritesheet('explosion', 'https://i.imgur.com/I4ECOgI.png', { frameWidth: 1000, frameHeight: 892 });
-	this.load.image('present', 'https://i.imgur.com/TFKRtXx.png');
+	this.load.image('present', 'https://i.imgur.com/ZJ9y5Oh.png');
 	this.load.image('happybirthday', 'https://i.imgur.com/YuPmybU.png');
 	this.load.image('banner', 'https://i.imgur.com/lDruX9J.png');
 	this.load.image('heart', 'https://i.imgur.com/KM0EQkm.png');
@@ -78,9 +78,19 @@ function create ()
 function startGame(scene) {
 	scene.gameStarted = true;
 	
+	// Create multiple banners to span the entire game width
+	const bannerWidth = 600 * 0.376; // Width of one banner after scaling
+	const numBanners = Math.ceil(WORLD_WIDTH / bannerWidth);
+	
+	for (let i = 0; i < numBanners; i++) {
+		const banner = scene.add.image(i * bannerWidth, 50, 'banner')
+			.setScale(0.3)
+			.setOrigin(0, 0.5); // Set origin to left center for proper alignment
+	}
+	
 	// Create and animate the "Find the balloons!" text
-	const findText = scene.add.text(300, 100, 'Find the balloons!', {
-		fontSize: '48px',
+	const findText = scene.add.text(300, 100, 'Find the balloons! \nLeft and right arrow keys to move and space to jump', {
+		fontSize: '15px',
 		fontFamily: '"Press Start 2P", monospace',
 		fill: '#EE7A3B',
 		stroke: '#000000',
